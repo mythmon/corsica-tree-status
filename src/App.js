@@ -116,7 +116,8 @@ class App extends Component {
 
     treeStatuses.sort((a, b) => treeScore(b) - treeScore(a));
 
-    if (probablyInCorsica()) {
+    let url = new URL(document.location);
+    if (url.searchParams.get('force') === null && probablyInCorsica()) {
       const interesting = treeStatuses.filter(ts => expectedStatuses[ts.tree] !== ts.status);
       if (interesting.length === 0) {
         // There isn't anything interesting here, so try and ask
