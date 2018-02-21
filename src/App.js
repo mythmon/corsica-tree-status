@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cx from 'classnames';
 import './App.css';
 
 const realTreeNames = [
@@ -140,11 +141,13 @@ class App extends Component {
     const {treeStatuses} = this.state;
     return (
       <div className="App">
-        <div className="tiles big">
-          {treeStatuses.slice(0, 4).map(ts => <StatusTile key={ts.tree} {...ts} />)}
-        </div>
-        <div className="tiles small">
-          {treeStatuses.slice(4).map(ts => <StatusTile key={ts.tree} {...ts} />)}
+        <div className="tiles">
+          {treeStatuses.slice(0, 4).map(
+              ts => <StatusTile key={ts.tree} {...ts} />)
+          }
+          {treeStatuses.slice(4).map(
+            ts => <StatusTile className="small" key={ts.tree} {...ts} />)
+          }
         </div>
       </div>
     );
@@ -153,7 +156,7 @@ class App extends Component {
 
 class StatusTile extends Component {
   render() {
-    const {reason, status, tree} = this.props;
+    const {reason, status, tree, className} = this.props;
     let backgroundColor;
     switch (status) {
       case "open": {
@@ -174,7 +177,7 @@ class StatusTile extends Component {
     }
 
     return (
-      <div className="tile" style={{ backgroundColor }}>
+      <div className={cx("tile", className)} style={{ backgroundColor }}>
         <h1>{tree}</h1>
         <h2>{status}</h2>
         {reason && <p>{reason}</p>}

@@ -1,17 +1,19 @@
 .tiles {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 50vh;
-}
-
-.tiles.small {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  height: 97vh;;
+  grid-gap: 1.5vh;
+  margin: 1.5vh;
 }
 
 .tiles > .tile {
   background: blue;
-  margin: 1vmin;
   padding: 2vmin;
+  grid-column-end: span 3;
+}
+
+.tiles > .tile.small {
+  grid-column-end: span 2;
 }
 
 .tile > h1 {
@@ -26,10 +28,10 @@
   font-weight: normal;
 }
 
-.tiles.small > .tile > h1 {
+.tile.small > h1 {
   font-size: 4vh;
 }
 
-.tiles.small > .tile > h2 {
+.tile.small > h2 {
   font-size: 2vh;
 }
