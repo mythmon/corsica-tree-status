@@ -1,0 +1,35 @@
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 50vh;
+}
+
+.tiles.small {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tiles > .tile {
+  background: blue;
+  margin: 1vmin;
+  padding: 2vmin;
+}
+
+.tile > h1 {
+  margin: 0;
+  font-size: 5vh;
+  font-weight: normal;
+}
+
+.tile > h2 {
+  margin: 0;
+  font-size: 3vh;
+  font-weight: normal;
+}
+
+.tiles.small > .tile > h1 {
+  font-size: 4vh;
+}
+
+.tiles.small > .tile > h2 {
+  font-size: 2vh;
+}
