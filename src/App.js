@@ -64,6 +64,7 @@ const expectedStatuses = {
   "mozilla-beta": "approval required",
   "mozilla-central": "approval required",
   "mozilla-esr52": "approval required",
+  "mozilla-esr60": "approval required",
   "mozilla-inbound": "open",
   "mozilla-release": "approval required",
   "nss": "open",
@@ -100,14 +101,14 @@ class App extends Component {
         autoland: 90,
         'mozilla-inbound': 80,
         'mozilla-central': 70,
-        'mozilla-beta': 60,
-        'mozilla-release': 50,
+        'mozilla-beta': 65,
+        'mozilla-release': 60,
         'nss-try': 30,
         nss: 20,
         graphics: 10,
       }
 
-      if (tree.startsWith('mozilla-esr')) {
+      if (tree.includes('esr')) {
         return 40;
       }
 
@@ -140,13 +141,14 @@ class App extends Component {
 
   render() {
     const {treeStatuses} = this.state;
+    let cutPoint = 2;
     return (
       <div className="App">
         <div className="tiles">
-          {treeStatuses.slice(0, 4).map(
+          {treeStatuses.slice(0, cutPoint).map(
               ts => <StatusTile key={ts.tree} {...ts} />)
           }
-          {treeStatuses.slice(4).map(
+          {treeStatuses.slice(cutPoint).map(
             ts => <StatusTile className="small" key={ts.tree} {...ts} />)
           }
         </div>
