@@ -6,7 +6,7 @@
     "classnames": "2.2.5",
     "react": "16.2.0",
     "react-dom": "16.2.0",
-    "react-scripts": "1.1.1"
+    "react-scripts": "1.1.4"
   },
   "homepage": "https://mythmon.github.io/corsica-tree-status",
   "scripts": {
