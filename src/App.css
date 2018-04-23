@@ -10,6 +10,7 @@
   background: blue;
   padding: 2vmin;
   grid-column-end: span 3;
+  position: relative;
 }
 
 .tiles > .tile.small {
@@ -34,4 +35,11 @@
 
 .tile.small > h2 {
   font-size: 2vh;
+}
+
+.tile > .interestingness {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  opacity: 0.3;
 }

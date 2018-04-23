@@ -179,11 +179,23 @@ class StatusTile extends Component {
       }
     }
 
+    let interestingness;
+    if (tree in expectedStatuses) {
+      if (expectedStatuses[tree] === status) {
+        interestingness = null;
+      } else {
+        interestingness = "!";
+      }
+    } else {
+      interestingness = "?";
+    }
+
     return (
       <div className={cx("tile", className)} style={{ backgroundColor }}>
         <h1>{tree}</h1>
         <h2>{status}</h2>
         {reason && <p>{reason}</p>}
+        <div class="interestingness">{interestingness}</div>
       </div>
     )
   }
