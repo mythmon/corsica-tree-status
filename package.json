@@ -10,15 +10,18 @@
   },
   "homepage": "https://mythmon.github.io/corsica-tree-status",
   "scripts": {
+    "postinstall": "yarn flow-typed install -s",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "flow": "flow"
   },
   "devDependencies": {
     "flow-bin": "0.70.0",
+    "flow-typed": "^2.4.0",
     "gh-pages": "1.1.0"
   }
 }

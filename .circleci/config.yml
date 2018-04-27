@@ -27,6 +27,10 @@ jobs:
           command: yarn build
 
       - run:
+          name: Flow
+          command: yarn flow
+
+      - run:
           name: Test
           command: yarn test
 

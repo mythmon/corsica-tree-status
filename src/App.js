@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import cx from 'classnames';
 import './App.css';
@@ -75,8 +76,14 @@ const expectedStatuses = {
   "try": "open",
 };
 
-class App extends Component {
-  constructor(props) {
+type TreeStatus = {|
+  tree: string,
+  status: string,
+  reason: string,
+|};
+
+class App extends Component<{}, {treeStatuses: Array<TreeStatus>}> {
+  constructor(props: {}) {
     super(props);
     this.state = {
       treeStatuses: [],
@@ -89,7 +96,7 @@ class App extends Component {
     this.updateTreeStatues(data.result);
   }
 
-  updateTreeStatues(treeStatuses) {
+  updateTreeStatues(treeStatuses: Array<TreeStatus>) {
     treeStatuses = treeStatuses
       .filter(({ tree }) => !tree.includes('comm-'))
       .filter(({ tree }) => !realTreeNames.includes(tree))
@@ -117,7 +124,7 @@ class App extends Component {
 
     treeStatuses.sort((a, b) => treeScore(b) - treeScore(a));
 
-    let url = new URL(document.location);
+    let url = new URL(document.location.toString());
     if (url.searchParams.get('force') === null && probablyInCorsica()) {
       const interesting = treeStatuses.filter(ts => expectedStatuses[ts.tree] !== ts.status);
       if (interesting.length === 0) {
@@ -146,7 +153,7 @@ class App extends Component {
       <div className="App">
         <div className="tiles">
           {treeStatuses.slice(0, cutPoint).map(
-              ts => <StatusTile key={ts.tree} {...ts} />)
+            ts => <StatusTile key={ts.tree} {...ts} />)
           }
           {treeStatuses.slice(cutPoint).map(
             ts => <StatusTile className="small" key={ts.tree} {...ts} />)
@@ -157,7 +164,14 @@ class App extends Component {
   }
 }
 
-class StatusTile extends Component {
+type StatusTileProps = {
+  reason: string,
+  status: string,
+  tree: string,
+  className?: string,
+}
+
+class StatusTile extends Component<StatusTileProps, {}> {
   render() {
     const {reason, status, tree, className} = this.props;
     let backgroundColor;

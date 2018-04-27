@@ -5,7 +5,10 @@
 [libs]
 
 [lints]
+all = error
 
 [options]
+emoji=true
+include_warnings=true
 
 [strict]
