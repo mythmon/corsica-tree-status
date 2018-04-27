@@ -20,7 +20,7 @@
     "flow": "flow"
   },
   "devDependencies": {
-    "flow-bin": "0.70.0",
+    "flow-bin": "0.71.0",
     "flow-typed": "2.4.0",
     "gh-pages": "1.1.0"
   }
