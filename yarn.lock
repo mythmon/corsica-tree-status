@@ -4567,9 +4567,9 @@ npmlog@^4.0.2:
     gauge "~2.7.3"
     set-blocking "~2.0.0"
 
-nsp@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/nsp/-/nsp-3.2.0.tgz#3d7c09dc09cc594aa159648264bba365fab29e3f"
+nsp@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/nsp/-/nsp-3.2.1.tgz#0f540f8e85851e4ad370b14d5001098046dedfd1"
   dependencies:
     chalk "^2.1.0"
     cli-table2 "^0.2.0"
