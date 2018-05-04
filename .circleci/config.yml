@@ -36,7 +36,7 @@ jobs:
 
       - run:
           name: NSP Security
-          command: nsp check --ignore-server-errors
+          command: yarn nsp
 
 workflows:
   version: 2

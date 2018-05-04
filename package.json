@@ -17,7 +17,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "flow": "flow"
+    "flow": "flow",
+    "nsp": "nsp check --ignore-server-errors"
   },
   "devDependencies": {
     "flow-bin": "0.71.0",
