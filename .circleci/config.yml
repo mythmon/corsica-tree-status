@@ -34,6 +34,10 @@ jobs:
           name: Test
           command: yarn test
 
+      - run:
+          name: NSP Security
+          command: yarn nsp
+
 workflows:
   version: 2
   pr:
