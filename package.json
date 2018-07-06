@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "flow-bin": "0.75.0",
-    "flow-typed": "2.5.0",
+    "flow-typed": "2.5.1",
     "gh-pages": "1.2.0",
     "nsp": "3.2.1"
   }
