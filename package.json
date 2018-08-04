@@ -21,7 +21,7 @@
     "nsp": "nsp check --ignore-server-errors"
   },
   "devDependencies": {
-    "flow-bin": "0.77.0",
+    "flow-bin": "0.78.0",
     "flow-typed": "2.5.1",
     "gh-pages": "1.2.0",
     "nsp": "3.2.1"
