@@ -64,7 +64,7 @@ const expectedStatuses = {
   "mozilla-aurora": "closed",
   "mozilla-beta": "approval required",
   "mozilla-central": "approval required",
-  "mozilla-esr52": "approval required",
+  "mozilla-esr52": "closed",
   "mozilla-esr60": "approval required",
   "mozilla-inbound": "open",
   "mozilla-release": "approval required",
