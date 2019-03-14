@@ -8,7 +8,7 @@
     "react-dom": "16.7.0",
     "react-scripts": "1.1.5"
   },
-  "homepage": "https://mythmon.github.io/corsica-tree-status",
+  "homepage": "https://corsica-tree-status.now.sh",
   "scripts": {
     "postinstall": "yarn flow-typed install -s",
     "start": "react-scripts start",
@@ -18,12 +18,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "flow": "flow",
-    "nsp": "nsp check --ignore-server-errors"
+    "now-build": "yarn build"
   },
   "devDependencies": {
     "flow-bin": "0.79.1",
     "flow-typed": "2.5.1",
-    "gh-pages": "2.0.1",
     "nsp": "3.2.1"
   }
 }
