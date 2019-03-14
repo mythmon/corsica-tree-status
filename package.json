@@ -6,7 +6,7 @@
     "classnames": "2.2.6",
     "react": "16.8.4",
     "react-dom": "16.8.4",
-    "react-scripts": "1.1.5"
+    "react-scripts": "2.1.8"
   },
   "homepage": "https://corsica-tree-status.now.sh",
   "scripts": {
