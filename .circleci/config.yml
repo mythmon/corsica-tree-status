@@ -34,10 +34,6 @@ jobs:
           name: Test
           command: yarn test
 
-      - run:
-          name: NSP Security
-          command: yarn audit
-
 workflows:
   version: 2
   pr:
