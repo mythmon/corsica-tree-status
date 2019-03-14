@@ -131,7 +131,7 @@ class App extends Component<{}, {treeStatuses: Array<TreeStatus>}> {
         // There isn't anything interesting here, so try and ask
         // Corsica to advance to the next page. Delay setting the tree
         // statuses for a moment, to avoid flickering content while
-        // changeing to the next page. Still load the content
+        // changing to the next page. Still load the content
         // eventually, in case we are wrong about being in Corsica, or
         // the reset message isn't received for some reason.
         setTimeout(() => this.setState({ treeStatuses }), 1000);
