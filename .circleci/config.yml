@@ -34,7 +34,6 @@ jobs:
       - run:
           name: Test
           command: yarn test
-
       - run:
           name: Dependency audit
           command: yarn audit
