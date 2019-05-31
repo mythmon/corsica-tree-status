@@ -20,7 +20,7 @@
     "now-build": "yarn build"
   },
   "devDependencies": {
-    "flow-bin": "0.99.1",
+    "flow-bin": "0.100.0",
     "flow-typed": "2.5.2",
     "nsp": "3.2.1"
   },
