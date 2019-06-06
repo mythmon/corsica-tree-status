@@ -66,6 +66,7 @@ const expectedStatuses = {
   "mozilla-central": "approval required",
   "mozilla-esr52": "closed",
   "mozilla-esr60": "approval required",
+  "mozilla-esr68": "approval required",
   "mozilla-inbound": "open",
   "mozilla-release": "approval required",
   "nss": "open",
@@ -125,22 +126,22 @@ class App extends Component<{}, {treeStatuses: Array<TreeStatus>}> {
     treeStatuses.sort((a, b) => treeScore(b) - treeScore(a));
 
     let url = new URL(document.location.toString());
-    if (url.searchParams.get('force') === null && probablyInCorsica()) {
-      const interesting = treeStatuses.filter(ts => expectedStatuses[ts.tree] !== ts.status);
-      if (interesting.length === 0) {
-        // There isn't anything interesting here, so try and ask
-        // Corsica to advance to the next page. Delay setting the tree
-        // statuses for a moment, to avoid flickering content while
-        // changing to the next page. Still load the content
-        // eventually, in case we are wrong about being in Corsica, or
-        // the reset message isn't received for some reason.
-        setTimeout(() => this.setState({ treeStatuses }), 1000);
-        window.parent.postMessage({
-          corsica: true,
-          message: 'reset',
-        }, "*");
-        return;
-      }
+    const interesting = treeStatuses.filter(ts => expectedStatuses[ts.tree] !== ts.status);
+    console.log("Interesting statuses:", interesting);
+    if (url.searchParams.get('force') === null && probablyInCorsica() && !interesting.length) {
+      // There isn't anything interesting here, so try and ask
+      // Corsica to advance to the next page. Delay setting the tree
+      // statuses for a moment, to avoid flickering content while
+      // changing to the next page. Still load the content
+      // eventually, in case we are wrong about being in Corsica, or
+      // the reset message isn't received for some reason.
+      console.log("Nothing is interesting, and in Corsica. Trying to skip.")
+      setTimeout(() => this.setState({ treeStatuses }), 1000);
+      window.parent.postMessage({
+        corsica: true,
+        message: 'reset',
+      }, "*");
+      return;
     }
 
     this.setState({ treeStatuses });
@@ -209,7 +210,7 @@ class StatusTile extends Component<StatusTileProps, {}> {
         <h1>{tree}</h1>
         <h2>{status}</h2>
         {reason && <p>{reason}</p>}
-        <div class="interestingness">{interestingness}</div>
+        <div className="interestingness">{interestingness}</div>
       </div>
     )
   }
