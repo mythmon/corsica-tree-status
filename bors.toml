@@ -1,4 +1,3 @@
 status = [
-  "ci/circleci: build_test",
   "Lint and Build / build (10) (push)"
 ]
