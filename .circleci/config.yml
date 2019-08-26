@@ -13,7 +13,7 @@ jobs:
           command: yarn install --cache-folder ~/.cache/yarn
 
       - run:
-          name: Build
+          name: Lint
           command: yarn lint
 
       - run:
