@@ -38,5 +38,8 @@
     "lint-fix:tsc": "yarn run lint:tsc",
     "lint-fix:eslint": "yarn run lint:eslint --fix",
     "lint-fix": "npm-run-all --parallel lint-fix:*"
+  },
+  "resolutions": {
+    "serialize-to-js": ">=2.0.0"
   }
 }
