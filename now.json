@@ -1,11 +1,8 @@
 {
   "version": 2,
   "name": "corsica-tree-status",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "build" }
-    }
-  ]
+  "builds": [{
+    "src": "package.json",
+    "use": "@now/static-build"
+  }]
 }
