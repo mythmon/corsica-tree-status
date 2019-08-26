@@ -25,11 +25,11 @@ jobs:
 
       - run:
           name: Build
-          command: yarn build
+          command: yarn lint
 
       - run:
-          name: Flow
-          command: yarn flow
+          name: Build
+          command: yarn build
 
       - run:
           name: Dependency audit

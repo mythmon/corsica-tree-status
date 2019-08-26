@@ -1,43 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 .tiles {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  height: 97vh;;
+  height: 97vh;
+  ;
   grid-gap: 1.5vh;
   margin: 1.5vh;
 }
 
-.tiles > .tile {
+.tiles>.tile {
   background: blue;
   padding: 2vmin;
   grid-column-end: span 3;
   position: relative;
 }
 
-.tiles > .tile.small {
+.tiles>.tile.small {
   grid-column-end: span 2;
 }
 
-.tile > h1 {
+.tile>h1 {
   margin: 0;
   font-size: 5vh;
   font-weight: normal;
 }
 
-.tile > h2 {
+.tile>h2 {
   margin: 0;
   font-size: 3vh;
   font-weight: normal;
 }
 
-.tile.small > h1 {
+.tile.small>h1 {
   font-size: 4vh;
 }
 
-.tile.small > h2 {
+.tile.small>h2 {
   font-size: 2vh;
 }
 
-.tile > .interestingness {
+.tile>.interestingness {
   position: absolute;
   right: 12px;
   bottom: 10px;

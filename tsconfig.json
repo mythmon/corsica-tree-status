@@ -1,0 +1,16 @@
+{
+  "files": ["src/index.tsx"],
+  "compilerOptions": {
+    "lib": ["dom", "esnext"],
+    "incremental": true,
+    "jsx": "react",
+    "noEmit": true,
+    "strict": true, // Enable all strict type-checking options.
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+  }
+}
