@@ -8,20 +8,9 @@ jobs:
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-            - yarn-cache-{{ checksum "yarn.lock" }}
-            - yarn-cache-
-
       - run:
           name: Yarn Install
           command: yarn install --cache-folder ~/.cache/yarn
-
-      - save_cache:
-          key: yarn-cache-{{ checksum "yarn.lock" }}
-          background: true
-          paths:
-            - ~/.cache/yarn
 
       - run:
           name: Build
