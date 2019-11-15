@@ -52,6 +52,7 @@ const expectedStatuses: Map<string, string> = new Map(
     "comm-esr45-thunderbird": "approval required",
     "comm-esr52-seamonkey": "approval required",
     "comm-esr52-thunderbird": "approval required",
+    "comm-esr68-thunderbird": "approval required",
     "comm-release-seamonkey": "approval required",
     "comm-release-thunderbird": "approval required",
     cypress: "open",
@@ -65,7 +66,7 @@ const expectedStatuses: Map<string, string> = new Map(
     "mozilla-beta": "approval required",
     "mozilla-central": "approval required",
     "mozilla-esr52": "closed",
-    "mozilla-esr60": "approval required",
+    "mozilla-esr60": "closed",
     "mozilla-esr68": "approval required",
     "mozilla-inbound": "open",
     "mozilla-release": "approval required",
@@ -100,19 +101,22 @@ class App extends Component<{}, { treeStatuses: Array<TreeStatus> }> {
 
   updateTreeStatues(treeStatuses: Array<TreeStatus>): void {
     treeStatuses = treeStatuses
-      .filter(({ tree }) => !tree.includes("comm-"))
+      // .filter(({ tree }) => !tree.includes("comm-"))
+      .filter(({ tree }) => !tree.includes("esr52") && !tree.includes("esr60"))
+      .filter(({ tree }) => !tree.includes("seamonkey"))
       .filter(({ tree }) => !realTreeNames.includes(tree))
-      .filter(({ tree }) => tree !== "mozilla-aurora");
+      .filter(({ tree }) => tree !== "mozilla-aurora")
 
     function treeScore({ tree }: { tree: string }): number {
       const knownScores: Map<string, number> = new Map(
         Object.entries({
           try: 100,
           autoland: 90,
-          "mozilla-inbound": 80,
+          "mozilla-inbound": 35,
           "mozilla-central": 70,
           "mozilla-beta": 65,
           "mozilla-release": 60,
+          "comm": 40,
           "nss-try": 30,
           nss: 20,
           graphics: 10,
@@ -120,7 +124,7 @@ class App extends Component<{}, { treeStatuses: Array<TreeStatus> }> {
       );
 
       if (tree.includes("esr")) {
-        return 40;
+        return 50;
       }
 
       return knownScores.get(tree) || 50;
