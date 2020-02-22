@@ -105,7 +105,7 @@ class App extends Component<{}, { treeStatuses: Array<TreeStatus> }> {
       .filter(({ tree }) => !tree.includes("esr52") && !tree.includes("esr60"))
       .filter(({ tree }) => !tree.includes("seamonkey"))
       .filter(({ tree }) => !realTreeNames.includes(tree))
-      .filter(({ tree }) => tree !== "mozilla-aurora")
+      .filter(({ tree }) => tree !== "mozilla-aurora");
 
     function treeScore({ tree }: { tree: string }): number {
       const knownScores: Map<string, number> = new Map(
@@ -116,7 +116,7 @@ class App extends Component<{}, { treeStatuses: Array<TreeStatus> }> {
           "mozilla-central": 70,
           "mozilla-beta": 65,
           "mozilla-release": 60,
-          "comm": 40,
+          comm: 40,
           "nss-try": 30,
           nss: 20,
           graphics: 10,
