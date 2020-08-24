@@ -93,7 +93,7 @@ class App extends Component<{}, { treeStatuses: Array<TreeStatus> }> {
     };
   }
 
-  async componentWillMount(): Promise<void> {
+  async UNSAFE_componentWillMount(): Promise<void> {
     const res = await fetch("https://treestatus.mozilla-releng.net/trees2");
     const data = await res.json();
     this.updateTreeStatues(data.result);
