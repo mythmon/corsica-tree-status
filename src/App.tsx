@@ -134,7 +134,7 @@ class App extends Component<{}, { treeStatuses: Array<TreeStatus> }> {
 
     const url = new URL(document.location.toString());
     const interesting = treeStatuses.filter(
-      ts => expectedStatuses.get(ts.tree) !== ts.status,
+      (ts) => expectedStatuses.get(ts.tree) !== ts.status,
     );
     console.log("Interesting statuses:", interesting);
     if (
@@ -169,10 +169,10 @@ class App extends Component<{}, { treeStatuses: Array<TreeStatus> }> {
     return (
       <div className="App">
         <div className="tiles">
-          {treeStatuses.slice(0, cutPoint).map(ts => (
+          {treeStatuses.slice(0, cutPoint).map((ts) => (
             <StatusTile key={ts.tree} {...ts} />
           ))}
-          {treeStatuses.slice(cutPoint).map(ts => (
+          {treeStatuses.slice(cutPoint).map((ts) => (
             <StatusTile className="small" key={ts.tree} {...ts} />
           ))}
         </div>
