@@ -10,7 +10,7 @@
     "node": "12.x"
   },
   "dependencies": {
-    "@types/classnames": "2.2.10",
+    "@types/classnames": "2.2.11",
     "@types/react-dom": "16.9.9",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
