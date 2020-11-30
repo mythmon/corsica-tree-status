@@ -39,7 +39,8 @@
     "lint-fix": "npm-run-all --parallel lint-fix:*"
   },
   "resolutions": {
-    "serialize-to-js": ">=2.0.0"
+    "serialize-to-js": ">=2.0.0",
+    "node-forge": ">=0.10.0"
   },
   "devDependencies": {
     "vercel": "^21.0.1"
